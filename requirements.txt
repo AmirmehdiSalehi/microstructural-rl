@@ -1,0 +1,98 @@
+# requirements.txt - Updated for Vectorized Sphere Selection Implementation
+
+# Core ML/RL dependencies
+torch>=1.13.0
+torch-geometric>=2.2.0
+stable-baselines3>=1.8.0
+gymnasium>=0.26.0
+
+# Scientific computing
+numpy>=1.21.0
+scipy>=1.7.0
+matplotlib>=3.5.0
+seaborn>=0.11.0
+pandas>=1.3.0
+
+# Graph processing and batching
+torch-scatter>=2.1.0
+torch-sparse>=0.6.0
+torch-cluster>=1.6.0
+
+# Experiment tracking and utilities
+wandb>=0.13.0
+tqdm>=4.62.0
+tensorboard>=2.10.0
+
+# Configuration and data handling
+pyyaml>=6.0
+omegaconf>=2.2.0
+hydra-core>=1.2.0
+
+# Multiprocessing and parallelization
+joblib>=1.2.0
+ray>=2.0.0  # Optional: for advanced distributed training
+
+# Development and testing
+pytest>=6.2.0
+black>=22.0.0
+flake8>=4.0.0
+mypy>=0.991
+
+# HPC and cluster computing
+mpi4py>=3.1.0  # For multi-node training
+psutil>=5.8.0  # For system monitoring
+
+# Connectivity analysis dependencies
+pickle-mixin>=1.0.2  # For lookup table serialization
+itertools  # Built-in, but listed for clarity
+
+# Optional: GPU acceleration
+torch-audio>=0.13.0  # If using audio features
+cupy-cuda11x>=11.0.0  # Optional: GPU-accelerated numpy operations
+
+# Optional: Advanced visualization
+plotly>=5.10.0
+bokeh>=2.4.0
+ipywidgets>=7.7.0  # For Jupyter notebook compatibility
+
+# Optional: Profiling and optimization
+py-spy>=0.3.0
+memory-profiler>=0.60.0
+line-profiler>=3.5.0
+
+# HPC cluster utilities
+slurm-pipeline>=1.0.0  # If available
+dask>=2022.8.0  # For advanced parallel computing
+
+# Build dependencies (for C++ extensions)
+cmake>=3.18.0  # System dependency, but listed for reference
+pybind11>=2.10.0
+
+# Data format support
+h5py>=3.7.0
+zarr>=2.12.0
+
+# Logging and monitoring enhancements
+structlog>=22.1.0
+rich>=12.0.0  # For beautiful console output
+
+# Network and communication (for distributed training)
+torch-distributed>=1.13.0
+nccl>=2.0.0  # NVIDIA Collective Communications Library
+
+# Performance optimization
+numba>=0.56.0
+cython>=0.29.0
+
+# Documentation (for development)
+sphinx>=5.0.0
+sphinx-rtd-theme>=1.0.0
+
+# Testing data generation
+faker>=15.0.0
+hypothesis>=6.50.0
+
+# Advanced plotting
+networkx>=2.8.0  # For graph visualization
+graphviz>=0.20.0  # For graph visualization
+pygraphviz>=1.9.0  # Advanced graph plotting
