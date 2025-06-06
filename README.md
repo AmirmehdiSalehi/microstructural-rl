@@ -73,37 +73,6 @@ A sophisticated reinforcement learning framework for generating optimized micros
 - CMake 3.18+
 - CUDA (optional, for GPU acceleration)
 
-### Quick Install
-
-```bash
-git clone https://github.com/yourusername/particle-packing-rl.git
-cd particle-packing-rl
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install Python dependencies
-pip install -r requirements.txt
-
-# Build C++ components
-mkdir build && cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release
-cmake --build . --parallel
-cd ..
-
-# Add C++ bindings to Python path
-export PYTHONPATH=$PWD/build/python:$PYTHONPATH
-
-# Generate sphere connectivity lookup table
-python scripts/generate_connectivity.py
-```
-
-### Development Install
-
-```bash
-pip install -e .
-```
 
 ## 🚦 Quick Start
 
@@ -194,52 +163,6 @@ python scripts/demo.py vectorized     # Vectorized environment demo
 python -m pytest tests/
 ```
 
-## 🔧 Configuration
-
-### Environment Configuration
-
-```yaml
-environment:
-  domain_size: 300
-  min_cores: 20
-  core_radius_min: 10
-  core_radius_max: 20
-  sphere_sizes: [2, 3, 5, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-  n_position_sectors: 26
-  compactness_factor: 0.5
-```
-
-### Training Configuration
-
-```yaml
-training:
-  total_timesteps: 5000000
-  learning_rate: 3e-4
-  n_envs: 32
-  batch_size: 128
-  n_epochs: 10
-
-vectorization:
-  n_envs: 32
-  auto_detect_cores: true
-  max_envs: 64
-
-curriculum:
-  enable: true
-  phases:
-    - name: "foundation"
-      domain_size: 150
-      timesteps: 1500000
-      temperature: 1.5
-    - name: "intermediate"
-      domain_size: 300
-      timesteps: 2000000
-      temperature: 1.0
-    - name: "advanced"
-      domain_size: 500
-      timesteps: 1500000
-      temperature: 0.5
-```
 
 ## 🧠 Key Concepts
 
@@ -319,24 +242,6 @@ scaling = evaluator.evaluate_domain_scaling()
 patterns = evaluator.analyze_sphere_selection_patterns()
 ```
 
-## 🐳 Docker Support
-
-```bash
-# Build Docker image
-docker build -t particle-packing-rl .
-
-# Run training
-docker run --gpus all -v $(pwd):/workspace particle-packing-rl python scripts/train.py
-```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
 ### Development Setup
 
 ```bash
@@ -353,44 +258,8 @@ python -m pytest tests/ -v
 black src/ scripts/ tests/
 ```
 
-## 📝 Citation
-
-If you use this code in your research, please cite:
-
-```bibtex
-@misc{particle-packing-rl,
-  title={Vectorized Sphere Selection Particle Packing RL},
-  author={Your Name},
-  year={2024},
-  url={https://github.com/yourusername/particle-packing-rl}
-}
-```
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
 
-- PyTorch Geometric team for excellent graph neural network support
-- Stable Baselines3 for robust RL implementations
-- The HPC community for cluster computing best practices
-
-## 📞 Support
-
-- **Issues**: [GitHub Issues](https://github.com/yourusername/particle-packing-rl/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/particle-packing-rl/discussions)
-- **Email**: your.email@university.edu
-
-## 🗺️ Roadmap
-
-- [ ] Multi-GPU training support
-- [ ] Advanced curriculum learning strategies
-- [ ] Real-time visualization tools
-- [ ] Integration with experimental validation data
-- [ ] Transfer learning across domain sizes
-- [ ] Multi-task learning for different packing objectives
-
----
-
-**Project Status**: Production Ready | **Last Updated**: December 2024
