@@ -242,22 +242,6 @@ scaling = evaluator.evaluate_domain_scaling()
 patterns = evaluator.analyze_sphere_selection_patterns()
 ```
 
-### Development Setup
-
-```bash
-# Install development dependencies
-pip install -r requirements-dev.txt
-
-# Run pre-commit hooks
-pre-commit install
-
-# Run tests
-python -m pytest tests/ -v
-
-# Format code
-black src/ scripts/ tests/
-```
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
